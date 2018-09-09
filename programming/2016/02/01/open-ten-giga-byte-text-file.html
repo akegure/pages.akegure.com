@@ -18,7 +18,7 @@
 {"mainEntityOfPage":{"@type":"WebPage","@id":"https://akegure.github.io/pages.akegure.com/programming/2016/02/01/open-ten-giga-byte-text-file.html"},"@type":"BlogPosting","url":"https://akegure.github.io/pages.akegure.com/programming/2016/02/01/open-ten-giga-byte-text-file.html","headline":"10GBのテキストファイルをエディタで開く","dateModified":"2016-02-01T00:00:00+09:00","datePublished":"2016-02-01T00:00:00+09:00","description":"10GBのテキストファイルをエディタで開く この前タイトル通り，10GBのテキストファイルを開こうとして大変だったので，そのメモです． 結論 ズバリ結論から言いますと，フリーのバイナリエディタで開いてなんとかなりました． 発端 ちょっとデータ分析する必要があって，10GBのデータをダウンロードしました．中身は数行でワンセットのテキストファイルなので，まず中を見ないことには分割もできない．ということで開こうとするんですが，なかなか開けません． 以下，各ソフトから僕が感じた声です． メモ帳「サイズでかいっす」 サ「なんかエラーっす」 テ「ダメっすね」 プロ御用達のアレ「・・・あ？文句あるんけ??」 まあLinuxでいくらでも方法あるって言われるとそれまでなんですが． ちょっと技術的に足りなく，時間も気にする必要があったのでどうにか最短距離がないか探してました． 結局完全フリーでまともに中身が読めたのが，Giga Text Viewerだけでした． これで中身を確認して，分割して終了・・・すればよかったのですが，しませんでした． 問題 もちろんファイルサイズがでかいことは問題なんですが，伏兵がいました． どういうわけかわかりませんが，元データの方にランダムに，大量の半角中点が含まれていたんです． そして分割プログラムがこれを終了文字と間違えて，分割作業を中断してしまう． これを何とかしようと思って無い知識でプログラムを書くんですが，相手が終了文字と同じコードなので，そもそも関数が文字として読んでくれない． だから比較もできない．バイトコードそのまま読んでみても，なんだかうまくいかない． 解決 これを解決してくれたのが，バイナリエディタでした． Fav Bin Editってやつです． なぜかバイナリエディタだと巨大ファイルでも開けることが多く，かつバイナリを読んでいるので終了文字に惑わされることがない！！ そこから問題となっているあの半角中点を見つけ出し，とりあえずピリオドに置換しました． その結果，スムーズに分割プログラムが動いて，無事分割できました．","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="https://akegure.github.io/pages.akegure.com/assets/css/style.css">
 <script src="/assets/js/scale.fix.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <!--[if lt IE 9]>
