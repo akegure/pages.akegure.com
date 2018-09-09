@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>MendeleyでもReadCubeでもなく、JabRefで文献を管理する | Gamut Geek</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="MendeleyでもReadCubeでもなく、JabRefで文献を管理する" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="MendeleyでもReadCubeでもなく、JabRefで文献を管理する この記事の重要単語 latex: 理系の論文書くときによく使われる ソフトウェア 。テキストファイルで文章を作り、pdfに変換する。某ソフトの画像ワープ現象や意味不明改行現象が無い。ツンデレ。 bibtex: latexで使われる、文献管理 ファイル 。自分が参照した論文の情報を書いておくと、あとは自動的に決まったフォーマットで文献情報を出力してくれる。 JabRef: 今回紹介する、bibtexをそのままめっちゃ読みやすく&amp;書きやすくしてくれる ソフトウェア 。通常のbibtexを見やすくするだけでなく、ファイル自体の場所、論評や感想も記録できる。 １．なぜ参考文献管理？ 論文や、やたら難しい文章を書く場合には、多くの場合他の文献を引用します。他者の本文を引用したり、計算手順を取り入れたり。文章を書いているときにはいいのですが、なにも考えず書いているとどんどん文献が増えてしまい、いざ参考にした文献をリストアップするころにはまた論文を調べなおす羽目になります。 そこで、何か参考にしたとき、すぐに情報を記録したり、参考文献リストに加えたりしてしまえば、あとから手間をかけずに済みます。 僕は論文を書く際はlatexを使うのですが、latexはbibtexファイルから、参照した論文のみを使った参考文献リストを自動生成してくれるので、とりあえず読んだ文献をすべてbibtexファイルに記録しておけば、あとからlatexが勝手に参考文献リストを作ってくれます。 ですが、生のbibtexファイルは↓のような感じになってまして、割と読みづらいです。実物はこれが何十個も並んだファイルになります。 @article{Sh:1, author = {Shelah, Saharon}, journal = {Israel Journal of Mathematics}, review = {MR 40-7102}, pages = {187--202}, title = {Stable theories}, volume = {7}, year = {1969}, } いくら管理の重要性がわかっても、これじゃ管理がやりにくいということで、今回ご紹介するのがJabRefです。 ２．なぜJabRef？ そもそも文献管理ができる高機能ソフト自体は、Mendeley, ReadCube, Evernoteなどいろいろとあるのですが、どれも独自規格を使っていたり、インターネット上に記録できるデータ量に制限があったり、いらない機能がガチャガチャついていたりして、いまいち肌に合いませんでした。（当の機能も失敗すること多かったですし・・・） これに対してJabRefは、単にbibtexファイルを見やすくし、編集しやすくするだけです。単純ゆえに、間違ってbibtexファイルを消しても、データベース自体が破綻するわけでもなく実際の文献自体には何の影響もありません。 また、そもそもbibtexファイルがテキストファイルであることもあり、非常に簡単にデータをコピー/移動できます。 また、jabRefが使っているbibtexと、latexを併用すれば自動で参考文献リストを出力してくれるので、自分用の文献リストを作っていれば、いつの間にか論文に添付する文献リストもできていきます。 ３．まとめ というわけで、今回は簡単にJabRefを紹介しました。 もし反響などあるようでしたら、また詳しい使い方などアップしておこうかなと思います。" />
+<meta property="og:description" content="MendeleyでもReadCubeでもなく、JabRefで文献を管理する この記事の重要単語 latex: 理系の論文書くときによく使われる ソフトウェア 。テキストファイルで文章を作り、pdfに変換する。某ソフトの画像ワープ現象や意味不明改行現象が無い。ツンデレ。 bibtex: latexで使われる、文献管理 ファイル 。自分が参照した論文の情報を書いておくと、あとは自動的に決まったフォーマットで文献情報を出力してくれる。 JabRef: 今回紹介する、bibtexをそのままめっちゃ読みやすく&amp;書きやすくしてくれる ソフトウェア 。通常のbibtexを見やすくするだけでなく、ファイル自体の場所、論評や感想も記録できる。 １．なぜ参考文献管理？ 論文や、やたら難しい文章を書く場合には、多くの場合他の文献を引用します。他者の本文を引用したり、計算手順を取り入れたり。文章を書いているときにはいいのですが、なにも考えず書いているとどんどん文献が増えてしまい、いざ参考にした文献をリストアップするころにはまた論文を調べなおす羽目になります。 そこで、何か参考にしたとき、すぐに情報を記録したり、参考文献リストに加えたりしてしまえば、あとから手間をかけずに済みます。 僕は論文を書く際はlatexを使うのですが、latexはbibtexファイルから、参照した論文のみを使った参考文献リストを自動生成してくれるので、とりあえず読んだ文献をすべてbibtexファイルに記録しておけば、あとからlatexが勝手に参考文献リストを作ってくれます。 ですが、生のbibtexファイルは↓のような感じになってまして、割と読みづらいです。実物はこれが何十個も並んだファイルになります。 @article{Sh:1, author = {Shelah, Saharon}, journal = {Israel Journal of Mathematics}, review = {MR 40-7102}, pages = {187--202}, title = {Stable theories}, volume = {7}, year = {1969}, } いくら管理の重要性がわかっても、これじゃ管理がやりにくいということで、今回ご紹介するのがJabRefです。 ２．なぜJabRef？ そもそも文献管理ができる高機能ソフト自体は、Mendeley, ReadCube, Evernoteなどいろいろとあるのですが、どれも独自規格を使っていたり、インターネット上に記録できるデータ量に制限があったり、いらない機能がガチャガチャついていたりして、いまいち肌に合いませんでした。（当の機能も失敗すること多かったですし・・・） これに対してJabRefは、単にbibtexファイルを見やすくし、編集しやすくするだけです。単純ゆえに、間違ってbibtexファイルを消しても、データベース自体が破綻するわけでもなく実際の文献自体には何の影響もありません。 また、そもそもbibtexファイルがテキストファイルであることもあり、非常に簡単にデータをコピー/移動できます。 また、jabRefが使っているbibtexと、latexを併用すれば自動で参考文献リストを出力してくれるので、自分用の文献リストを作っていれば、いつの間にか論文に添付する文献リストもできていきます。 ３．まとめ というわけで、今回は簡単にJabRefを紹介しました。 もし反響などあるようでしたら、また詳しい使い方などアップしておこうかなと思います。" />
+<meta property="og:site_name" content="Gamut Geek" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-04-06T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/research/2016/04/06/reference-management-software.html"},"@type":"BlogPosting","url":"/research/2016/04/06/reference-management-software.html","headline":"MendeleyでもReadCubeでもなく、JabRefで文献を管理する","dateModified":"2016-04-06T00:00:00+09:00","datePublished":"2016-04-06T00:00:00+09:00","description":"MendeleyでもReadCubeでもなく、JabRefで文献を管理する この記事の重要単語 latex: 理系の論文書くときによく使われる ソフトウェア 。テキストファイルで文章を作り、pdfに変換する。某ソフトの画像ワープ現象や意味不明改行現象が無い。ツンデレ。 bibtex: latexで使われる、文献管理 ファイル 。自分が参照した論文の情報を書いておくと、あとは自動的に決まったフォーマットで文献情報を出力してくれる。 JabRef: 今回紹介する、bibtexをそのままめっちゃ読みやすく&amp;書きやすくしてくれる ソフトウェア 。通常のbibtexを見やすくするだけでなく、ファイル自体の場所、論評や感想も記録できる。 １．なぜ参考文献管理？ 論文や、やたら難しい文章を書く場合には、多くの場合他の文献を引用します。他者の本文を引用したり、計算手順を取り入れたり。文章を書いているときにはいいのですが、なにも考えず書いているとどんどん文献が増えてしまい、いざ参考にした文献をリストアップするころにはまた論文を調べなおす羽目になります。 そこで、何か参考にしたとき、すぐに情報を記録したり、参考文献リストに加えたりしてしまえば、あとから手間をかけずに済みます。 僕は論文を書く際はlatexを使うのですが、latexはbibtexファイルから、参照した論文のみを使った参考文献リストを自動生成してくれるので、とりあえず読んだ文献をすべてbibtexファイルに記録しておけば、あとからlatexが勝手に参考文献リストを作ってくれます。 ですが、生のbibtexファイルは↓のような感じになってまして、割と読みづらいです。実物はこれが何十個も並んだファイルになります。 @article{Sh:1, author = {Shelah, Saharon}, journal = {Israel Journal of Mathematics}, review = {MR 40-7102}, pages = {187--202}, title = {Stable theories}, volume = {7}, year = {1969}, } いくら管理の重要性がわかっても、これじゃ管理がやりにくいということで、今回ご紹介するのがJabRefです。 ２．なぜJabRef？ そもそも文献管理ができる高機能ソフト自体は、Mendeley, ReadCube, Evernoteなどいろいろとあるのですが、どれも独自規格を使っていたり、インターネット上に記録できるデータ量に制限があったり、いらない機能がガチャガチャついていたりして、いまいち肌に合いませんでした。（当の機能も失敗すること多かったですし・・・） これに対してJabRefは、単にbibtexファイルを見やすくし、編集しやすくするだけです。単純ゆえに、間違ってbibtexファイルを消しても、データベース自体が破綻するわけでもなく実際の文献自体には何の影響もありません。 また、そもそもbibtexファイルがテキストファイルであることもあり、非常に簡単にデータをコピー/移動できます。 また、jabRefが使っているbibtexと、latexを併用すれば自動で参考文献リストを出力してくれるので、自分用の文献リストを作っていれば、いつの間にか論文に添付する文献リストもできていきます。 ３．まとめ というわけで、今回は簡単にJabRefを紹介しました。 もし反響などあるようでしたら、また詳しい使い方などアップしておこうかなと思います。","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link rel="stylesheet" href="https://akegure.github.io/pages.akegure.com/assets/css/style.css">
+<script src="/assets/js/scale.fix.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="header">Gamut Geek</h1>
+            <p class="header">Make world more funny</p>
+             
+<ul>
+    <li>programming (6)</li>
+</ul>
+ 
+<ul>
+    <li>life (1)</li>
+</ul>
+ 
+<ul>
+    <li>research (1)</li>
+</ul>
+
+        </header>
+
+        <section>
+            <h1 id="mendeleyでもreadcubeでもなくjabrefで文献を管理する">MendeleyでもReadCubeでもなく、JabRefで文献を管理する</h1>
+
+<h2 id="この記事の重要単語">この記事の重要単語</h2>
+<ul>
+  <li><em>latex</em>: 理系の論文書くときによく使われる <strong>ソフトウェア</strong> 。テキストファイルで文章を作り、pdfに変換する。某ソフトの画像ワープ現象や意味不明改行現象が無い。ツンデレ。</li>
+  <li><em>bibtex</em>: latexで使われる、文献管理 <strong>ファイル</strong> 。自分が参照した論文の情報を書いておくと、あとは自動的に決まったフォーマットで文献情報を出力してくれる。</li>
+  <li><em>JabRef</em>: 今回紹介する、bibtexをそのままめっちゃ読みやすく&amp;書きやすくしてくれる <strong>ソフトウェア</strong> 。通常のbibtexを見やすくするだけでなく、ファイル自体の場所、論評や感想も記録できる。</li>
+</ul>
+
+<h2 id="１なぜ参考文献管理">１．なぜ参考文献管理？</h2>
+<p>論文や、やたら難しい文章を書く場合には、多くの場合他の文献を引用します。他者の本文を引用したり、計算手順を取り入れたり。文章を書いているときにはいいのですが、なにも考えず書いているとどんどん文献が増えてしまい、いざ参考にした文献をリストアップするころにはまた論文を調べなおす羽目になります。</p>
+
+<p>そこで、何か参考にしたとき、すぐに情報を記録したり、参考文献リストに加えたりしてしまえば、あとから手間をかけずに済みます。</p>
+
+<p>僕は論文を書く際はlatexを使うのですが、latexはbibtexファイルから、参照した論文のみを使った参考文献リストを自動生成してくれるので、とりあえず読んだ文献をすべてbibtexファイルに記録しておけば、あとからlatexが勝手に参考文献リストを作ってくれます。</p>
+
+<p>ですが、生のbibtexファイルは↓のような感じになってまして、割と読みづらいです。実物はこれが何十個も並んだファイルになります。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{Sh:1,
+    author = {Shelah, Saharon},
+    journal = {Israel Journal of Mathematics},
+    review = {MR 40-7102},
+    pages = {187--202},
+    title = {Stable theories},
+    volume = {7},
+    year = {1969},
+}
+</code></pre></div></div>
+
+<p>いくら管理の重要性がわかっても、これじゃ管理がやりにくいということで、今回ご紹介するのがJabRefです。</p>
+
+<h2 id="２なぜjabref">２．なぜJabRef？</h2>
+<p>そもそも文献管理ができる高機能ソフト自体は、Mendeley, ReadCube, Evernoteなどいろいろとあるのですが、どれも独自規格を使っていたり、インターネット上に記録できるデータ量に制限があったり、いらない機能がガチャガチャついていたりして、いまいち肌に合いませんでした。（当の機能も失敗すること多かったですし・・・）</p>
+
+<p>これに対してJabRefは、単にbibtexファイルを見やすくし、編集しやすくするだけです。単純ゆえに、間違ってbibtexファイルを消しても、データベース自体が破綻するわけでもなく実際の文献自体には何の影響もありません。</p>
+
+<p>また、そもそもbibtexファイルがテキストファイルであることもあり、非常に簡単にデータをコピー/移動できます。</p>
+
+<p>また、jabRefが使っているbibtexと、latexを併用すれば自動で参考文献リストを出力してくれるので、自分用の文献リストを作っていれば、いつの間にか論文に添付する文献リストもできていきます。</p>
+
+<h2 id="３まとめ">３．まとめ</h2>
+<p>というわけで、今回は簡単にJabRefを紹介しました。</p>
+
+<p>もし反響などあるようでしたら、また詳しい使い方などアップしておこうかなと思います。</p>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4921109155847130"
+     data-ad-slot="4974208865"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </section>
+
+        <footer>
+            <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-73406198-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+
+</html>

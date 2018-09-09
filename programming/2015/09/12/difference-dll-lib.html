@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>DLLとLIBの違いとは | Gamut Geek</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="DLLとLIBの違いとは" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="DLLとLIBの違いとは 突然ですが，dllとlibの違いってご存知でしょうか？ 一言で言えばこの二つには，プログラムのコンパイル時に（Windowsであれば）.exeに全てのプログラムを入れるか，.exeと一部のプログラムを分離させるか，という違いがあります． コンパイルがある言語といえば，CとかC++．ここら辺にかかわってきます． 名称 libファイル：Static Link Library dllファイル：Dynamic Link Library 名称の由来はこんな感じです．「ライブラリ」という単語は，誰かが書いたプログラムをまとめたものです． C++言語の著名なライブラリであれば，boostとか，STLとかがありますね． 役割 libファイル：命令をまとめて保有していて，コンパイル時に.exeに取り込まれる dllファイル：命令をまとめて保有していて，コンパイル時に.exeとは分離する 役割の違いは細かく見ていけば色々とありますが，僕が考えている重要な違いはこの一点に尽きます． たまにソフトウェアをインストールすると，インストールファイルがとても少ないものがあると思いますが，そういう時はdllが作成されず，すべてのプログラムがexeの中に入っています． これに対してdllは，exeと分離してます．そして，exeが実行されたときに呼び出されます． このように，二つの間には”外から見えるか”，”いつexeに読み込まれるか”という違いがあります． 特徴 libファイル：アクセスされたくないものを隠す，ユーザが誤って消す可能性がない． dllファイル：ソフトをリリースした後でも，付属のdllさえ変更すれば，ソフト自体の挙動を修正することができる． このように，それぞれの特徴としては，隠蔽性をとるか，拡張性をとるか，という違いがあるのかと思います． このような特徴があるため，多くのソフトウェアにおいてプラグインなどはdllを読み込むような仕組みにしている場合が多いです． windowsの場合には，”C:\Windows\SysWOW64”のようなディレクトリ見ると，多数のdllファイルが配置されているのが確認できます． dllの優れている点は，ユーザには何も気づかせることなく，アップデートでコッソリ関数の実装だけを変更できることです． 例 「配列のポインタを受け取ってソートする関数」を作って，dllを作ります． 友人には，「void sort(int*)で呼び出してね！」と言っておけば，中を最初バブルソートで書いてたけども，後からクイックソートにコッソリ変えておく，なんてこともできます． 友人から見たら全く同じ関数を呼び出して，結果も同じですので，問題は発生しません． まとめ libとdllの違い，腑に落ちたでしょうか？ 個人のプログラム作成の場合には，「どうしてもdllやlibが必要」ということはほぼ起こらないかと思いますが，この違いを知っているとGibHub等で公開されている外部のプログラムを使うのがスムーズになると思います． 違いを理解し，外部プログラムをどんどん取り込んで使ってみましょう！" />
+<meta property="og:description" content="DLLとLIBの違いとは 突然ですが，dllとlibの違いってご存知でしょうか？ 一言で言えばこの二つには，プログラムのコンパイル時に（Windowsであれば）.exeに全てのプログラムを入れるか，.exeと一部のプログラムを分離させるか，という違いがあります． コンパイルがある言語といえば，CとかC++．ここら辺にかかわってきます． 名称 libファイル：Static Link Library dllファイル：Dynamic Link Library 名称の由来はこんな感じです．「ライブラリ」という単語は，誰かが書いたプログラムをまとめたものです． C++言語の著名なライブラリであれば，boostとか，STLとかがありますね． 役割 libファイル：命令をまとめて保有していて，コンパイル時に.exeに取り込まれる dllファイル：命令をまとめて保有していて，コンパイル時に.exeとは分離する 役割の違いは細かく見ていけば色々とありますが，僕が考えている重要な違いはこの一点に尽きます． たまにソフトウェアをインストールすると，インストールファイルがとても少ないものがあると思いますが，そういう時はdllが作成されず，すべてのプログラムがexeの中に入っています． これに対してdllは，exeと分離してます．そして，exeが実行されたときに呼び出されます． このように，二つの間には”外から見えるか”，”いつexeに読み込まれるか”という違いがあります． 特徴 libファイル：アクセスされたくないものを隠す，ユーザが誤って消す可能性がない． dllファイル：ソフトをリリースした後でも，付属のdllさえ変更すれば，ソフト自体の挙動を修正することができる． このように，それぞれの特徴としては，隠蔽性をとるか，拡張性をとるか，という違いがあるのかと思います． このような特徴があるため，多くのソフトウェアにおいてプラグインなどはdllを読み込むような仕組みにしている場合が多いです． windowsの場合には，”C:\Windows\SysWOW64”のようなディレクトリ見ると，多数のdllファイルが配置されているのが確認できます． dllの優れている点は，ユーザには何も気づかせることなく，アップデートでコッソリ関数の実装だけを変更できることです． 例 「配列のポインタを受け取ってソートする関数」を作って，dllを作ります． 友人には，「void sort(int*)で呼び出してね！」と言っておけば，中を最初バブルソートで書いてたけども，後からクイックソートにコッソリ変えておく，なんてこともできます． 友人から見たら全く同じ関数を呼び出して，結果も同じですので，問題は発生しません． まとめ libとdllの違い，腑に落ちたでしょうか？ 個人のプログラム作成の場合には，「どうしてもdllやlibが必要」ということはほぼ起こらないかと思いますが，この違いを知っているとGibHub等で公開されている外部のプログラムを使うのがスムーズになると思います． 違いを理解し，外部プログラムをどんどん取り込んで使ってみましょう！" />
+<meta property="og:site_name" content="Gamut Geek" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-12T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/programming/2015/09/12/difference-dll-lib.html"},"@type":"BlogPosting","url":"/programming/2015/09/12/difference-dll-lib.html","headline":"DLLとLIBの違いとは","dateModified":"2015-09-12T00:00:00+09:00","datePublished":"2015-09-12T00:00:00+09:00","description":"DLLとLIBの違いとは 突然ですが，dllとlibの違いってご存知でしょうか？ 一言で言えばこの二つには，プログラムのコンパイル時に（Windowsであれば）.exeに全てのプログラムを入れるか，.exeと一部のプログラムを分離させるか，という違いがあります． コンパイルがある言語といえば，CとかC++．ここら辺にかかわってきます． 名称 libファイル：Static Link Library dllファイル：Dynamic Link Library 名称の由来はこんな感じです．「ライブラリ」という単語は，誰かが書いたプログラムをまとめたものです． C++言語の著名なライブラリであれば，boostとか，STLとかがありますね． 役割 libファイル：命令をまとめて保有していて，コンパイル時に.exeに取り込まれる dllファイル：命令をまとめて保有していて，コンパイル時に.exeとは分離する 役割の違いは細かく見ていけば色々とありますが，僕が考えている重要な違いはこの一点に尽きます． たまにソフトウェアをインストールすると，インストールファイルがとても少ないものがあると思いますが，そういう時はdllが作成されず，すべてのプログラムがexeの中に入っています． これに対してdllは，exeと分離してます．そして，exeが実行されたときに呼び出されます． このように，二つの間には”外から見えるか”，”いつexeに読み込まれるか”という違いがあります． 特徴 libファイル：アクセスされたくないものを隠す，ユーザが誤って消す可能性がない． dllファイル：ソフトをリリースした後でも，付属のdllさえ変更すれば，ソフト自体の挙動を修正することができる． このように，それぞれの特徴としては，隠蔽性をとるか，拡張性をとるか，という違いがあるのかと思います． このような特徴があるため，多くのソフトウェアにおいてプラグインなどはdllを読み込むような仕組みにしている場合が多いです． windowsの場合には，”C:\\Windows\\SysWOW64”のようなディレクトリ見ると，多数のdllファイルが配置されているのが確認できます． dllの優れている点は，ユーザには何も気づかせることなく，アップデートでコッソリ関数の実装だけを変更できることです． 例 「配列のポインタを受け取ってソートする関数」を作って，dllを作ります． 友人には，「void sort(int*)で呼び出してね！」と言っておけば，中を最初バブルソートで書いてたけども，後からクイックソートにコッソリ変えておく，なんてこともできます． 友人から見たら全く同じ関数を呼び出して，結果も同じですので，問題は発生しません． まとめ libとdllの違い，腑に落ちたでしょうか？ 個人のプログラム作成の場合には，「どうしてもdllやlibが必要」ということはほぼ起こらないかと思いますが，この違いを知っているとGibHub等で公開されている外部のプログラムを使うのがスムーズになると思います． 違いを理解し，外部プログラムをどんどん取り込んで使ってみましょう！","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link rel="stylesheet" href="https://akegure.github.io/pages.akegure.com/assets/css/style.css">
+<script src="/assets/js/scale.fix.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="header">Gamut Geek</h1>
+            <p class="header">Make world more funny</p>
+             
+<ul>
+    <li>programming (6)</li>
+</ul>
+ 
+<ul>
+    <li>life (1)</li>
+</ul>
+ 
+<ul>
+    <li>research (1)</li>
+</ul>
+
+        </header>
+
+        <section>
+            <h1 id="dllとlibの違いとは">DLLとLIBの違いとは</h1>
+
+<p>突然ですが，dllとlibの違いってご存知でしょうか？</p>
+
+<p>一言で言えばこの二つには，プログラムのコンパイル時に（Windowsであれば）.exeに全てのプログラムを入れるか，.exeと一部のプログラムを分離させるか，という違いがあります．</p>
+
+<p>コンパイルがある言語といえば，CとかC++．ここら辺にかかわってきます．</p>
+
+<h2 id="名称">名称</h2>
+<ul>
+  <li>libファイル：Static Link Library</li>
+  <li>dllファイル：Dynamic Link Library</li>
+</ul>
+
+<p>名称の由来はこんな感じです．「ライブラリ」という単語は，誰かが書いたプログラムをまとめたものです．
+C++言語の著名なライブラリであれば，boostとか，STLとかがありますね．</p>
+
+<h2 id="役割">役割</h2>
+<ul>
+  <li>libファイル：命令をまとめて保有していて，コンパイル時に.exeに取り込まれる</li>
+  <li>dllファイル：命令をまとめて保有していて，コンパイル時に.exeとは分離する</li>
+</ul>
+
+<p>役割の違いは細かく見ていけば色々とありますが，僕が考えている重要な違いはこの一点に尽きます．</p>
+
+<p>たまにソフトウェアをインストールすると，インストールファイルがとても少ないものがあると思いますが，そういう時はdllが作成されず，すべてのプログラムがexeの中に入っています．</p>
+
+<p>これに対してdllは，exeと分離してます．そして，exeが実行されたときに呼び出されます．
+このように，二つの間には”外から見えるか”，”いつexeに読み込まれるか”という違いがあります．</p>
+
+<h2 id="特徴">特徴</h2>
+<ul>
+  <li>libファイル：アクセスされたくないものを隠す，ユーザが誤って消す可能性がない．</li>
+  <li>dllファイル：ソフトをリリースした後でも，付属のdllさえ変更すれば，ソフト自体の挙動を修正することができる．</li>
+</ul>
+
+<p>このように，それぞれの特徴としては，隠蔽性をとるか，拡張性をとるか，という違いがあるのかと思います．
+このような特徴があるため，多くのソフトウェアにおいてプラグインなどはdllを読み込むような仕組みにしている場合が多いです．
+windowsの場合には，”C:\Windows\SysWOW64”のようなディレクトリ見ると，多数のdllファイルが配置されているのが確認できます．</p>
+
+<p>dllの優れている点は，ユーザには何も気づかせることなく，アップデートでコッソリ関数の実装だけを変更できることです．</p>
+
+<h2 id="例">例</h2>
+<p>「配列のポインタを受け取ってソートする関数」を作って，dllを作ります．</p>
+
+<p>友人には，「void sort(int*)で呼び出してね！」と言っておけば，中を最初バブルソートで書いてたけども，後からクイックソートにコッソリ変えておく，なんてこともできます．
+友人から見たら全く同じ関数を呼び出して，結果も同じですので，問題は発生しません．</p>
+
+<h2 id="まとめ">まとめ</h2>
+<p>libとdllの違い，腑に落ちたでしょうか？
+個人のプログラム作成の場合には，「どうしてもdllやlibが必要」ということはほぼ起こらないかと思いますが，この違いを知っているとGibHub等で公開されている外部のプログラムを使うのがスムーズになると思います．</p>
+
+<p>違いを理解し，外部プログラムをどんどん取り込んで使ってみましょう！</p>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4921109155847130"
+     data-ad-slot="4974208865"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </section>
+
+        <footer>
+            <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-73406198-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+
+</html>

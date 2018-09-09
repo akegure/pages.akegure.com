@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Alembicとは | Gamut Geek</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Alembicとは" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Alembicとは ここではＣＧ関係の話をしていきます． とりあえず公式サイトは以下 http://www.alembic.io/ Alembicとは，一言で言うと複数のソフトウェア間でオブジェクトを共有するためのデータ形式です． （だとあけぐれは認識しています．） DCCツールというとMaya等が有名ですが，Maya自体のファイル形式ではいろんな情報を含みすぎて，他のソフトと互換性がない． 単純にオブジェクトの形状とか法線ベクトル，色くらいの情報をやり取りするだけならobjとかでもいいんですが，さすがにそれだと使いにくい． ということで策定されたのがこのalembicになります．オープンソースで開発されているので，誰でも読み込むプラグインを書くことができるそうです． まあプラグインとかそう簡単に書ければ苦労はしませんが・・・ このデータはオブジェクトの形状だけではなく，時間方向の移動なども記録できるそうで，最近ではプロダクション内でデータを共有する際の選択肢に入ってきているようです． 使い方とかは自分が使えるようになったら書きますね． また，これとgitを組み合わせて効率的なバージョン管理も可能とした，multiverseというようなものもあります．これに関してもまた詳しく． 用途の目的としては，あとから動きを変更するとかではなく， もう動きにほぼ変更が加わらない状態で，作品を作る工程の下流に当たる色付けとか効果付けの担当に回して作業するためのもののようです． この時に，時間軸に沿った動きと形状が保証されることで，作業をスムーズに進めることができる，そんな思想で作られています． プラグインといえば，Digital Frontier Inc. から，3DS Maxのプラグインはダウンロードできるそうなので，興味があればお試しあれっ！ http://www.dfx.co.jp/dftalk/?p=5895" />
+<meta property="og:description" content="Alembicとは ここではＣＧ関係の話をしていきます． とりあえず公式サイトは以下 http://www.alembic.io/ Alembicとは，一言で言うと複数のソフトウェア間でオブジェクトを共有するためのデータ形式です． （だとあけぐれは認識しています．） DCCツールというとMaya等が有名ですが，Maya自体のファイル形式ではいろんな情報を含みすぎて，他のソフトと互換性がない． 単純にオブジェクトの形状とか法線ベクトル，色くらいの情報をやり取りするだけならobjとかでもいいんですが，さすがにそれだと使いにくい． ということで策定されたのがこのalembicになります．オープンソースで開発されているので，誰でも読み込むプラグインを書くことができるそうです． まあプラグインとかそう簡単に書ければ苦労はしませんが・・・ このデータはオブジェクトの形状だけではなく，時間方向の移動なども記録できるそうで，最近ではプロダクション内でデータを共有する際の選択肢に入ってきているようです． 使い方とかは自分が使えるようになったら書きますね． また，これとgitを組み合わせて効率的なバージョン管理も可能とした，multiverseというようなものもあります．これに関してもまた詳しく． 用途の目的としては，あとから動きを変更するとかではなく， もう動きにほぼ変更が加わらない状態で，作品を作る工程の下流に当たる色付けとか効果付けの担当に回して作業するためのもののようです． この時に，時間軸に沿った動きと形状が保証されることで，作業をスムーズに進めることができる，そんな思想で作られています． プラグインといえば，Digital Frontier Inc. から，3DS Maxのプラグインはダウンロードできるそうなので，興味があればお試しあれっ！ http://www.dfx.co.jp/dftalk/?p=5895" />
+<meta property="og:site_name" content="Gamut Geek" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/programming/2015/09/11/what-is-alembic.html"},"@type":"BlogPosting","url":"/programming/2015/09/11/what-is-alembic.html","headline":"Alembicとは","dateModified":"2015-09-11T00:00:00+09:00","datePublished":"2015-09-11T00:00:00+09:00","description":"Alembicとは ここではＣＧ関係の話をしていきます． とりあえず公式サイトは以下 http://www.alembic.io/ Alembicとは，一言で言うと複数のソフトウェア間でオブジェクトを共有するためのデータ形式です． （だとあけぐれは認識しています．） DCCツールというとMaya等が有名ですが，Maya自体のファイル形式ではいろんな情報を含みすぎて，他のソフトと互換性がない． 単純にオブジェクトの形状とか法線ベクトル，色くらいの情報をやり取りするだけならobjとかでもいいんですが，さすがにそれだと使いにくい． ということで策定されたのがこのalembicになります．オープンソースで開発されているので，誰でも読み込むプラグインを書くことができるそうです． まあプラグインとかそう簡単に書ければ苦労はしませんが・・・ このデータはオブジェクトの形状だけではなく，時間方向の移動なども記録できるそうで，最近ではプロダクション内でデータを共有する際の選択肢に入ってきているようです． 使い方とかは自分が使えるようになったら書きますね． また，これとgitを組み合わせて効率的なバージョン管理も可能とした，multiverseというようなものもあります．これに関してもまた詳しく． 用途の目的としては，あとから動きを変更するとかではなく， もう動きにほぼ変更が加わらない状態で，作品を作る工程の下流に当たる色付けとか効果付けの担当に回して作業するためのもののようです． この時に，時間軸に沿った動きと形状が保証されることで，作業をスムーズに進めることができる，そんな思想で作られています． プラグインといえば，Digital Frontier Inc. から，3DS Maxのプラグインはダウンロードできるそうなので，興味があればお試しあれっ！ http://www.dfx.co.jp/dftalk/?p=5895","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link rel="stylesheet" href="https://akegure.github.io/pages.akegure.com/assets/css/style.css">
+<script src="/assets/js/scale.fix.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="header">Gamut Geek</h1>
+            <p class="header">Make world more funny</p>
+             
+<ul>
+    <li>programming (6)</li>
+</ul>
+ 
+<ul>
+    <li>life (1)</li>
+</ul>
+ 
+<ul>
+    <li>research (1)</li>
+</ul>
+
+        </header>
+
+        <section>
+            <h1 id="alembicとは">Alembicとは</h1>
+
+<p>ここではＣＧ関係の話をしていきます．</p>
+
+<p>とりあえず公式サイトは以下</p>
+
+<p>http://www.alembic.io/</p>
+
+<p>Alembicとは，一言で言うと複数のソフトウェア間でオブジェクトを共有するためのデータ形式です．</p>
+
+<p>（だとあけぐれは認識しています．）</p>
+
+<p>DCCツールというとMaya等が有名ですが，Maya自体のファイル形式ではいろんな情報を含みすぎて，他のソフトと互換性がない．</p>
+
+<p>単純にオブジェクトの形状とか法線ベクトル，色くらいの情報をやり取りするだけならobjとかでもいいんですが，さすがにそれだと使いにくい．</p>
+
+<p>ということで策定されたのがこのalembicになります．オープンソースで開発されているので，誰でも読み込むプラグインを書くことができるそうです．</p>
+
+<p>まあプラグインとかそう簡単に書ければ苦労はしませんが・・・</p>
+
+<p>このデータはオブジェクトの形状だけではなく，時間方向の移動なども記録できるそうで，最近ではプロダクション内でデータを共有する際の選択肢に入ってきているようです．</p>
+
+<p>使い方とかは自分が使えるようになったら書きますね．</p>
+
+<p>また，これとgitを組み合わせて効率的なバージョン管理も可能とした，multiverseというようなものもあります．これに関してもまた詳しく．</p>
+
+<p>用途の目的としては，あとから動きを変更するとかではなく，</p>
+
+<p>もう動きにほぼ変更が加わらない状態で，作品を作る工程の下流に当たる色付けとか効果付けの担当に回して作業するためのもののようです．</p>
+
+<p>この時に，時間軸に沿った動きと形状が保証されることで，作業をスムーズに進めることができる，そんな思想で作られています．</p>
+
+<p>プラグインといえば，Digital Frontier Inc. から，3DS Maxのプラグインはダウンロードできるそうなので，興味があればお試しあれっ！</p>
+
+<p>http://www.dfx.co.jp/dftalk/?p=5895</p>
+
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4921109155847130"
+     data-ad-slot="4974208865"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </section>
+
+        <footer>
+            <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-73406198-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+
+</html>
