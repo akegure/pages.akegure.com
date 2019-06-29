@@ -7,15 +7,15 @@
 <meta name="generator" content="Jekyll v3.8.3" />
 <meta property="og:title" content="Visual Studio 2017のCMakeでIntellisenseが効かなかった" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました． 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します． Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります． #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します．この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう．そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります． ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します． 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした．試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました． 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています． 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました．そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます． リンク この内容はQiitaにも投稿しました．" />
-<meta property="og:description" content="Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました． 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します． Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります． #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します．この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう．そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります． ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します． 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした．試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました． 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています． 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました．そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます． リンク この内容はQiitaにも投稿しました．" />
+<meta name="description" content="Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました. 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します. Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります. #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します.この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう.そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります. ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します. 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした.試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました. 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています. 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました.そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます. リンク この内容はQiitaにも投稿しました." />
+<meta property="og:description" content="Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました. 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します. Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります. #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します.この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう.そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります. ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します. 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした.試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました. 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています. 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました.そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます. リンク この内容はQiitaにも投稿しました." />
 <link rel="canonical" href="https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html" />
 <meta property="og:url" content="https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html" />
 <meta property="og:site_name" content="Gamut Geek" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-11-11T00:00:00+09:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html"},"@type":"BlogPosting","url":"https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html","headline":"Visual Studio 2017のCMakeでIntellisenseが効かなかった","dateModified":"2018-11-11T00:00:00+09:00","datePublished":"2018-11-11T00:00:00+09:00","description":"Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました． 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します． Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります． #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します．この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう．そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります． ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します． 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした．試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました． 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています． 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました．そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます． リンク この内容はQiitaにも投稿しました．","@context":"http://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html"},"@type":"BlogPosting","url":"https://akegure.com/programming/2018/11/11/visual-studio-intellisense-error.html","headline":"Visual Studio 2017のCMakeでIntellisenseが効かなかった","dateModified":"2018-11-11T00:00:00+09:00","datePublished":"2018-11-11T00:00:00+09:00","description":"Visual Studio 2017のCMakeでIntellisenseが効かなかった 背景 研究で開発しているプログラムでCMakeを使っているが，Visual StudioをVisual Studio 2017 15.9にアップデートしたらcl.exeが使えなくなった 仕方がないのでVisual StudioのCMake管理機能を使い始めた Visual StudioのIntellisenseが効かなかった 目的 Visual Studioで CMakeのプロジェクトを開き Intellisenseを使いながら 実装する 結果 できました. 何故Intellisenseを実行できなかったか？ 問題点を書く前に，少しだけVisual Studioの仕組みについて説明します. Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります. #include &lt;hahaha.h&gt; #include &quot;hahaha.h&quot; &lt;&gt; を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します.この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう.そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，追加のインクルードディレクトリ がここで言う検索対象 のディレクトリとなります. ”“ を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します. 私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，&lt;&gt; を使用していたことでした.試しにこれを ”“ に変更して試したところ，無事Intellisenseが動作しました. 予想 おそらく，これは&lt;&gt; を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています. 今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました.そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます. リンク この内容はQiitaにも投稿しました.","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link rel="stylesheet" href="https://akegure.com/assets/css/style.css">
@@ -59,31 +59,31 @@
 </ul>
 
 <h2 id="結果">結果</h2>
-<p>できました．</p>
+<p>できました.</p>
 
 <h2 id="何故intellisenseを実行できなかったか">何故Intellisenseを実行できなかったか？</h2>
-<p>問題点を書く前に，少しだけVisual Studioの仕組みについて説明します．</p>
+<p>問題点を書く前に，少しだけVisual Studioの仕組みについて説明します.</p>
 
-<p>Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります．</p>
+<p>Visual Studioでは，C++のヘッダをincludeする際に二種類の記法があります.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;hahaha.h&gt;
 
 #include "hahaha.h"
 </code></pre></div></div>
 
-<p><strong>&lt;&gt;</strong> を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します．この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう．そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，<em>追加のインクルードディレクトリ</em> がここで言う<strong>検索対象</strong> のディレクトリとなります．</p>
+<p><strong>&lt;&gt;</strong> を使用した場合は，IDEに設定された検索対象の場所から該当ファイルを検索します.この際，Windowsであれば，多くの場合IDEはVisual Studioとなるでしょう.そしてこのとき，Visual Studioのプロジェクトのプロパティから設定できる，<em>追加のインクルードディレクトリ</em> がここで言う<strong>検索対象</strong> のディレクトリとなります.</p>
 
-<p><strong>”“</strong> を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します．</p>
+<p><strong>”“</strong> を使用した場合には，呼び出し元ファイルを起点としてファイルを検索します.</p>
 
-<p>私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，<strong>&lt;&gt;</strong> を使用していたことでした．試しにこれを <strong>”“</strong> に変更して試したところ，無事Intellisenseが動作しました．</p>
+<p>私の環境における問題点は，自身が作成したローカルのファイルをインクルードする際に，<strong>&lt;&gt;</strong> を使用していたことでした.試しにこれを <strong>”“</strong> に変更して試したところ，無事Intellisenseが動作しました.</p>
 
 <h2 id="予想">予想</h2>
-<p>おそらく，これは<strong>&lt;&gt;</strong> を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています．</p>
+<p>おそらく，これは<strong>&lt;&gt;</strong> を使用したことにより無駄に検索範囲が広くなってしまったため，それぞれのファイルを見つけ出すまでに膨大な時間がかかってしまっていたのではないかと考えています.</p>
 
-<p>今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました．そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます．</p>
+<p>今回のプログラムはグラフィクス用のプログラムで，画面表示のためにたくさんの外部ライブラリを使用していました.そして，それぞれのライブラリのincludeディレクトリをIDEが検索する対象範囲に追加していたため，時間がかかってしまったものと思われます.</p>
 
 <h2 id="リンク">リンク</h2>
-<p>この内容は<a href="https://qiita.com/akegure/items/c0cc30a81adde5144ec9">Qiita</a>にも投稿しました．</p>
+<p>この内容は<a href="https://qiita.com/akegure/items/c0cc30a81adde5144ec9">Qiita</a>にも投稿しました.</p>
 
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- responsive1 -->
