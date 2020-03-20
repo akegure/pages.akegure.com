@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: akegure.com
+Token: dd76e1133b08b3cdb8f13034d259e5e69b0579a1b7d9abd97077e8978d98279f
